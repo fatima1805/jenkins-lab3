@@ -1,26 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Pipeline Stages') {
             steps {
-                echo 'Building...'
-                sh 'ls'
-                sh 'pwd'
-                sh 'touch build-output.txt'
+                sh "ls"
             }
         }
-        stage('Test') {
+        stage('second stage') {
             steps {
-                echo 'Testing...'
-                sh 'ls'
-                sh 'pwd'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                sh 'mv build-output.txt deployed-output.txt'
-                sh 'ls'
+                sh "pwd"
             }
         }
     }
